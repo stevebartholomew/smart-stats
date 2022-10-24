@@ -1,3 +1,9 @@
+lib = File.join(File.dirname(__FILE__), 'lib')
+$LOAD_PATH.unshift(lib)
+
+require 'reports/total_visits'
+require 'reports/unique_visits'
+
 total = { }
 unique = { }
 
@@ -21,39 +27,23 @@ unique = { }
 #
 # Log Entries => Report => Renderer
 
-File.open(ARGV[0], 'r').each do |line|
-  (url, ip) = line.split(/\s/)
+all_entries = File.open(ARGV[0], 'r').map {|line| line.split(/\s/) }
 
-  total[url] ||= 0
-  total[url] += 1
-
-  unique[url] ||= {}
-  unique[url][ip] ||= 0
-  unique[url][ip] += 1
-end
-
-total = total.sort_by {|(ip,t)| t}.reverse
+total_visits = Reports::TotalVisits.new(all_entries)
+unique_visits = Reports::UniqueVisits.new(all_entries)
 
 puts '[Total visits by page]'
 puts ''
-total.each do |page, result|
-  printf "%-8s %s\n", page, result
+
+total_visits.results.each do |result|
+  printf "%-8s %s\n", result.page, result.count
 end
 
 puts ''
 puts '[Unique visits by page]'
 puts ''
 
-uniq_totals = unique.reduce({}) do |memo, (page, result)|
-  t = result.reduce(0) do |acc, (ip, count)|
-    acc += 1
-    acc
-  end
-
-  memo[page] = t
-  memo
-end.sort_by {|k,t| t}.reverse
-
-uniq_totals.each do |page, result|
-  printf "%-8s %s\n", page, result
+unique_visits.results.each do |result|
+  printf "%-8s %s\n", result.page, result.count
 end
+

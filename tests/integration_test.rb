@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require_relative 'test_helper'
 
 describe 'smart-stats' do
   let(:expected) { File.read('./tests/fixtures/outputs/valid') }
