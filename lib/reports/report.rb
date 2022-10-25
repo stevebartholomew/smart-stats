@@ -9,7 +9,7 @@ module Reports
     # @example:
     #     Reports::Report.new([
     #       ['home', '192.168.0.1']
-    #     ])
+    #     ]
     #
     def initialize(entries)
       @entries = entries

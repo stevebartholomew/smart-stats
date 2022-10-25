@@ -38,8 +38,18 @@ rake rubocop
 ## Things I like
 
 * Separation of layers
+* Object creation is light-weight
 
-## Things I don't like
+## Things I'm not sure about
+
+* Probably should have used rspec instead of hand-rolling test config  and re-aquainting with minitest
+* Not sure the meta programming in `LogFile::Parsers.line` is worth it but it is contained and is cleaner than the long form
+
+## Improvements
+
+* HTML renderer
+* CLI options for disabling error output
+* Localization
 
 ## Log
 

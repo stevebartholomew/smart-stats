@@ -2,7 +2,7 @@ require 'english'
 require 'log_file/parsers'
 
 class LogFile
-  attr_reader :path, :entries, :errors
+  attr_accessor :path, :entries, :errors
 
   # @param path [String] file path to log file
   def initialize(path)
@@ -10,15 +10,6 @@ class LogFile
     @entries = []
     @errors = []
   end
-
-  # @raises [Error] if file is empty
-  def parse!
-    parse
-  end
-
-  private
-
-  attr_writer :entries, :errors
 
   def parse
     File.foreach(path) do |line|
@@ -30,7 +21,7 @@ class LogFile
       if path && ip
         entries << [path, ip]
       else
-        errors << ["line #{$INPUT_LINE_NUMBER}", line]
+        errors << [$INPUT_LINE_NUMBER, line]
       end
     end
 

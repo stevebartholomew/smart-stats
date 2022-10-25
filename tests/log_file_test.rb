@@ -5,7 +5,7 @@ describe LogFile do
   let(:log_file) { LogFile.new(fixture_path(path)) }
 
   before do
-    log_file.parse!
+    log_file.parse
   end
 
   describe 'parsing a valid log file' do

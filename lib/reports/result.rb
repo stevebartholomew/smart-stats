@@ -2,9 +2,9 @@ module Reports
   class Result
     attr_reader :page, :count
 
-    def initialize(attr)
-      @page = attr.fetch(:page)
-      @count = attr.fetch(:count)
+    def initialize(page:, count:)
+      @page = page
+      @count = count
     end
   end
 end
