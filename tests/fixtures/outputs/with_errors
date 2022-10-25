@@ -1,0 +1,21 @@
+[Total visits by page]
+
+/index   6
+/pages/1 4
+/about   3
+/pages   1
+
+[Unique visits by page]
+
+/index   4
+/pages/1 3
+/about   2
+/pages   1
+
+
+Found errors on the following lines:
+
+Line 4: "0000[]"
+Line 6: "f=="
+Line 11: "/index nonsense"
+Line 12: "lots of incorrect data"

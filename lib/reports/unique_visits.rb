@@ -14,7 +14,7 @@ module Reports
     end
 
     def unique_visits
-      entries.reduce({}) do |acc, (page, ip)|
+      entries.each_with_object({}) do |(page, ip), acc|
         acc[page] ||= Set.new
         acc[page].add(ip)
         acc
@@ -22,7 +22,7 @@ module Reports
     end
 
     def summarized(visits)
-      visits.reduce({}) do |acc, (page, ips)|
+      visits.each_with_object({}) do |(page, ips), acc|
         acc[page] ||= ips.size
         acc
       end

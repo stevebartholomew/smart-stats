@@ -9,7 +9,7 @@ module Reports
     private
 
     def parse
-      entries.reduce({}) do |acc, (page)|
+      entries.each_with_object({}) do |(page), acc|
         acc[page] ||= 0
         acc[page] += 1
         acc

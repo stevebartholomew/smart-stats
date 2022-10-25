@@ -1,0 +1,14 @@
+/about 100.100.100.1
+/pages 100.100.100.2
+/pages/1 100.100.100.1
+0000[]
+/pages/1 100.100.100.2
+f==
+/index 100.100.100.4
+/index 100.100.100.4
+/index fe80::1497:a22f:97d5:d8d7
+/index nonsense
+bad 100.100.100.2
+one! two!
+
+lots of incorrect data

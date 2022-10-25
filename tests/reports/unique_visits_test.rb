@@ -11,7 +11,7 @@ describe Reports::UniqueVisits do
       ['/about', '100.100.100.1'],
       ['/about', '100.100.100.2'],
       ['/index', '100.100.100.1'],
-      ['/about', '100.100.100.3'],
+      ['/about', '100.100.100.3']
     ]
   end
 
