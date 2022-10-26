@@ -1,6 +1,6 @@
 # smart-stats
 
-Smart stats is an example project to demonstrate my approach development.
+Smart stats is an example project to demonstrate my approach to development.
 
 The idea is simple: take a sample web server log file and output some statistics. The aim is to produce a well-modelled, well-tested script that is built for future change and expansion.
 
@@ -55,7 +55,7 @@ Run an individual test
 
 ```
 ruby tests/integration_test.rb
-ruby tests/reports/unique_visits_test .rb
+ruby tests/reports/unique_visits_test.rb
 ```
 
 ## Linting
