@@ -25,10 +25,10 @@ class Cli
   private
 
   def check_file_is_valid!
-    return if File.exists?(path) && !File.empty?(path)
+    return if File.exist?(path) && !File.empty?(path)
 
     puts "#{path} is either missing or empty!"
+
     exit(1)
   end
 end
-

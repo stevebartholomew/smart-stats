@@ -12,3 +12,8 @@ end
 def fixture(path)
   File.read(fixture_path(path))
 end
+
+def double(attrs)
+  klass = Struct.new(*attrs.keys)
+  klass.new(*attrs.values)
+end

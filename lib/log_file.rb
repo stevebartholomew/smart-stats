@@ -14,9 +14,8 @@ class LogFile
   def parse
     File.foreach(path) do |line|
       next if line =~ /^$/
-      line.chomp!
 
-      (path, ip) = Parsers.line(line)
+      (path, ip) = Parsers.line(line.chomp!)
 
       if path && ip
         entries << [path, ip]

@@ -10,7 +10,7 @@ module Renderers
     end
 
     def render
-      raise "implement in subclass"
+      raise 'implement in subclass'
     end
 
     private

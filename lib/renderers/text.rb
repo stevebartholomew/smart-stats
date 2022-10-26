@@ -24,8 +24,8 @@ module Renderers
     end
 
     # @todo format the spacing to match the longest result
-    def format(result)
-      sprintf "%-8s %s", result.page, result.count
+    def format_result(result)
+      format('%-8s %s', result.page, result.count)
     end
   end
 end
